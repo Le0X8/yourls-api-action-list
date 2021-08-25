@@ -1,28 +1,31 @@
-Plugin for YOURLS 1.6+: Custom API Action
+# Plugin for YOURLS 1.6+: Custom API Action (list all keywords)
 
-# What for
+This plugin adds a custom API action at `list` to show all keywords used:
 
-Create custom API `action`, such as:  
-`http://sho.rt/yourls-api.php?username=x&password=xx&action=do_crazy_stuff&format=json` 
+## Sample result
 
-# How to
+Using a URL such as `https://alfa.bravo/yourls-api.php?username=charlie&password=delta&action=list&format=json`:
 
-* In `/user/plugins`, create a new folder named `api-action`
-* Drop these files in that directory
-* Go to the Plugins administration page and activate the plugin 
-* Have fun
+```json
+{
+  "statusCode": 200,
+  "message": "success",
+  "result": [
+    {
+      "keyword": "alfa"
+    },
+    {
+      "keyword": "bravo"
+    },
+    {
+      "keyword": "charlie"
+    }
+  ]
+}
 
-# Format your returns
-
-Your API function should, ideally, return an array like this one:
-```php
-	$return = array(
-		'statusCode' => 200, // HTTP-like status code
-		'simple'     => "a human readable one liner, if 'format=simple'",
-		'message'    => 'a return status',
-		'your_action' => array( 
-			'something' => 'some value',   // anything function wants to return
-			'otherthing' => 'other value',
-		),
-	);
 ```
+
+# Setup
+
+1. Upload this folder to `/user/plugins`.
+2. Activate this plugin from the Plugins administration page.
