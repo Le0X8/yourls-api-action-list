@@ -13,9 +13,10 @@ yourls_add_filter( 'api_action_list', 'my_list_function' );
 
 // Actually list
 function my_list_function() {
+	$table = YOURLS_DB_TABLE_URL;
 	return array(
 		'statusCode' => 200,
-		'result' => yourls_get_db()->fetchAll("SELECT keyword FROM yourls_url"),
 		'message'    => 'success',
+		'result' => yourls_get_db()->fetchAll("SELECT keyword FROM `$table`"),
 	);	
 }
