@@ -15,7 +15,7 @@ yourls_add_filter( 'api_action_list', 'my_list_function' );
 function my_list_function() {
 	return array(
 		'statusCode' => 200,
-		'message'    => 'success: listed',
 		'result' => yourls_get_db()->fetchAll("SELECT keyword FROM yourls_url"),
+		'message'    => 'success',
 	);	
 }
