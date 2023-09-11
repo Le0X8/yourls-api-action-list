@@ -1,10 +1,10 @@
-# Plugin for YOURLS 1.6+: Custom API Action (list all keywords)
+# Plugin for YOURLS 1.6+: Custom API Action (list all keywords & URLs)
 
 This plugin adds a custom API action at `list` to show all keywords used:
 
 ## Sample result
 
-Using a URL such as `https://alfa.bravo/yourls-api.php?username=charlie&password=delta&action=list&format=json`:
+Using a URL such as `https://leox.li/yourls-api.php?signature=1002a612b4&action=list&format=json`:
 
 ```json
 {
@@ -12,13 +12,16 @@ Using a URL such as `https://alfa.bravo/yourls-api.php?username=charlie&password
   "message": "success",
   "result": [
     {
-      "keyword": "alfa"
+      "keyword": "website",
+      "url": "https://leox.dev/"
     },
     {
-      "keyword": "bravo"
+      "keyword": "donald",
+      "url": "https://donald.org/"
     },
     {
-      "keyword": "charlie"
+      "keyword": "gh",
+      "url": "https://github.com/Le0X8/yourls-api-action-list"
     }
   ]
 }
